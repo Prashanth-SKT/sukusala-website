@@ -1,9 +1,10 @@
 <?php
+header('Content-Type: application/json');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['quoteName']);
-    $email = htmlspecialchars($_POST['quoteMail']);
-    $category = htmlspecialchars($_POST['quoteCategory']);
-    $message = htmlspecialchars($_POST['quoteMessage']);
+    $name = htmlspecialchars($_POST['quoteName'], ENT_QUOTES, 'UTF-8');
+    $email = htmlspecialchars($_POST['quoteMail', ENT_QUOTES, 'UTF-8']);
+    $category = htmlspecialchars($_POST['quoteCategory', ENT_QUOTES, 'UTF-8']);
+    $message = htmlspecialchars($_POST['quoteMessage', ENT_QUOTES, 'UTF-8']);
 
     $to = "contact@sukusalatechnologies.com";  // Replace with your email address
     $subject = "New Quote Form Submission";
