@@ -530,6 +530,18 @@ h6,
     background-color: #f44336; /* Red */
 }
 
+.contact-banner {
+    display: none; /* Hide banners by default */
+    padding: 10px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #4CAF50; /* Green */
+}
+
+.contact-error {
+    background-color: #f44336; /* Red */
+}
+
 .form-control {
     height: 55px;
     background-color: #f8f9fa;
