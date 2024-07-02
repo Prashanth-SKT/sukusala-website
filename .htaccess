@@ -1,0 +1,6 @@
+# Use PHP as default
+AddType application/x-httpd-php .php
+AddHandler application/x-httpd-php .php
+
+# Alternatively, if you know the specific PHP version
+AddHandler application/x-httpd-php74 .php
