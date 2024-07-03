@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+    $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+    $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+    $subject = htmlspecialchars($_POST['subject'], ENT_QUOTES, 'UTF-8');
+    $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
 
     $to = "contact@sukusalatechnologies.com";  // Replace with your email address
     $subject = "New Contact Form Submission";
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "Query: " . $subject . "\n";
     $body .= "Message: " . $message . "\n";
 
-    if (true) {
+    if (mail($to, $subject, $body, $headers)) {
         echo json_encode(['success' => true]);
     } else {
         echo json_encode(['success' => false]);
